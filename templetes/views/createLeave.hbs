@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Attendance and Leaves Management App </title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+table, td, tr {
+border: none;
+border-collapse:collapse;
+padding-left: 120px;
+}
+
+.button {
+  background-color:#e7e7e7;
+  border: none;
+  color: rgb(22, 20, 20);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 15px;
+}
+
+.button:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+</style>
+</head>
+<body style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+    <h3 style="text-align:center">UVXCEL IT Solutions</h3>
+    <h4 style="text-align:center">Employee Attendance and Leaves Management System </h4>
+    <p style="text-align:center; background-color: orange;">united we excel</p>
+
+    <table style="border:none;margin-left:300px;background-color: honeydew;">
+        
+        <tr>
+            <td>Email-Id of the employee: <input id="email" type="text" placeholder="Email"></input>
+                <input type="button" class="button" value="Submit">
+            </td>
+        </tr>
+        <tr>
+        <td><pre>       </pre> </td>    
+        </tr>
+        <tr><br>
+            <td>Leave dates : from <input id="startDate" type="date"></input> 
+            Till date: <input id="endDate" type="date" ></td>
+            </tr>
+            <tr><td><pre style="padding-left: 100px;">         <input type="button" class="button" value="Submit">
+            </td> </tr></pre>
+        <br>
+                
+        <tr>
+            <td><form ><br> Reason for Leave : 
+                <form >
+                    <input id="typeOfLeave" list="browsers">
+                    <datalist id="browsers">
+                      <option value="Sick Leave">
+                      <option value="Planned Leave">
+                    </datalist>
+                    <input type="button" class="button" value="Submit">
+
+              </form></td>
+              <tr>
+            <td><br><form style="margin-left:120px;">
+                <textarea id="msg" name="message" rows="10" cols="30" placeholder="Reason for leave is : "></textarea>
+                <br><br>
+                <input type="button" class="button" value="Submit" onclick="submitLeave()">
+
+              </form></td>
+        </tr>
+        <tr>
+        </tr>
+
+</table>
+            <p id="error" style=" text-align: center; width: 80%;"></p>
+<br>
+<hr>
+<pre>
+    <p style="text-align:center;font-family: Verdana, Geneva, Tahoma, sans-serif;">  
+    <b>Contact Us</b>
+    223, Goodwill Square.
+    Dhanori, Pune 15
+    Maharashtra, India.
+    <b> EmailUs :</b> MailMe@UVXCEL.com
+    </pre></p>
+    
+    <script src="./js/createLeave.js"></script>
+</body>
+</html>
