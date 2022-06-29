@@ -1,0 +1,98 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif !important;
+}
+.container{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  margin: 2rem 0rem;
+}
+
+.main-container {
+  width: 471px;
+  height: 328px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    border-radius: 8px;
+    padding: 10px 30px;
+    padding-top: 15px;
+    margin-bottom: 10px;
+}
+.main-container h1 {
+  color: tomato;
+  border-bottom: 1px solid rgb(194, 194, 194);
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-size: 27px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
+}
+.select-holiday {
+  width: 440px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main-container form select,
+.main-container form input {
+  padding: 10px 15px;
+  font-size: 19px;
+  border-radius: 5px;
+  border: 1px solid rgb(199, 199, 199);
+  margin: 10px 0px;
+  width: 250px;
+}
+.main-container form select,
+.main-container form select option {
+  text-transform: capitalize;
+}
+
+.main-container form input[type="date"] {
+  text-transform: uppercase;
+}
+.main-container .select-holiday label {
+  font-size: 24px;
+  text-transform: capitalize;
+}
+.main-container form .btn {
+  font-size: 30px;
+  padding: 10px 15px;
+  margin: 10px;
+  border-radius: 2px;
+  transition: 1s ease background-color;
+  cursor: pointer;
+  outline: none;
+  border: 1px solid rgb(199, 199, 199);
+  width: 90%;
+  background-color: rgb(255, 114, 89);
+  color: white;
+}
+.main-container form .btn:hover {
+  background-color: rgb(255, 82, 51);
+}
+
+#error {
+  color: tomato;
+  font-size: 22px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 500px) {
+  .main-container .select-holiday {
+    width: 360px;
+    flex-direction: column;
+  }
+  .main-container form .btn {
+    width: 70%;
+  }
+}

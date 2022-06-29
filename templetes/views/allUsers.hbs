@@ -1,0 +1,113 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/headers.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+     <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <title>All Employees Attendance</title>
+  </head>
+  <body>
+    <div class="container">
+      {{>adminNavbar}}
+      <div class="arrow-div">
+        <div class="middle-text">
+          <p class="month year">2022</p>
+          <p class="month m">jan</p>
+        </div>
+      </div>
+      <div class="current">
+        <p>27-january-2022</p>
+      </div>
+       <div class="color-box-container">
+        <div class="color-text">
+          <div class="color-box yellow"></div><p>Weekend</p>
+        </div>
+        <div class="color-text">
+          <div class="color-box red"></div><p>Holiday</p>
+        </div>
+        <div class="color-text">
+          <div class="color-box purple"></div><p>SL = Sick Leave</p>
+        </div>
+        <div class="color-text">
+          <div class="color-box darkchocolate"></div><p>CL = Casual Leave</p>
+        </div>
+        <div class="color-text">
+          <div class="color-box darkMarun"></div><p>PL = Privilege Leave</p>
+        </div>
+        <div class="color-text">
+          <div class="color-box compOff"></div><p>Comp-Off</p>
+        </div>
+        <div class="color-text">
+          <div class="color-box halfSick"></div><p>Half Sick Leave</p>
+        </div>
+        <div class="color-text">
+          <div class="color-box halfCasual"></div><p>Half Casual Leave</p>
+        </div>
+        <div class="color-text">
+          <div class="color-box halfPrivilege"></div><p>Half Privilege Leave</p>
+        </div>
+      </div>
+      <div class="main-container">
+        <table>
+          <head>
+            <tr>
+              <th>Sr.No.</th>
+              <th>Employee Id</th>
+              <th>FirstName</th>
+              <th>LastName</th>
+            </tr>
+          </head>
+          <tbody class="users"></tbody>
+        </table>
+        <table class="calender-table">
+          <head>
+            <tr></tr>
+          </head>
+          <tbody class="checkBox-div"></tbody>
+        </table>
+        <table>
+          <head>
+            <tr>
+              <th>Present</th>
+            </tr>
+          </head>
+          <tbody class="missed-div"></tbody>
+        </table>
+        <table>
+          <head>
+            <tr>
+              <th class="hide">Absent</th>
+              <th>SL</th>
+              <th>CL</th>
+              <th>PL</th>
+            </tr>
+          </head>
+          <tbody class="absent-div">
+          </tbody>
+        </table>
+      </div>
+      {{>paginationCard}}
+    </div>
+    {{>footer}}
+    <script src="./js/allUsers.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

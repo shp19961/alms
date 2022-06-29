@@ -9,9 +9,10 @@ process.on("uncaughtException", (err) => {
   process.exit(1);
 });
 
-dotenv.config({ path: "../backend/config/config.env" });
+dotenv.config({
+  path: "../uvxcel attendance system with bootstrap/config/config.env",
+});
 dbconnection();
-
 const server = app.listen(process.env.PORT, () =>
   console.log(`server runing on port ${process.env.PORT}`)
 );

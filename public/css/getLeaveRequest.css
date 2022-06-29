@@ -1,0 +1,131 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif !important;
+  font-size: 20px;
+}
+p {
+  margin-bottom: 0;
+}
+
+.main-container {
+  margin: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-container .header_of_table th {
+  padding: 10px;
+  text-align: center;
+  font-size: 22px;
+  border: 1px solid greenyellow;
+}
+.main-container .column_of_table td,td {
+  font-size: 20px;
+  text-align: center;
+  border: 1px solid greenyellow !important;
+  text-transform: capitalize;
+  padding: 5px 5px;
+}
+.main-container  td:nth-child(2) {
+  text-transform: none;
+}
+.main-container .header_of_table th:nth-child(4) {
+  padding: 10px 27px;
+}
+.main-container .column_of_table td p {
+  font-size: 20px;
+  padding: 2px 0px;
+}
+
+tr:nth-child(even) {
+  background-color: rgba(214, 238, 238,0.3)
+}
+
+.button-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button-group button {
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 18px;
+  margin: 4px 2px;
+  cursor: pointer;
+  /* width: 50%; */
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button-group .acceptBtn {
+  background-color: #4caf50 !important;
+}
+.button-group .denyBtn {
+  background-color: red !important;
+}
+.button-group .editBtn {
+  background-color: orange;
+}
+.button-group .acceptToggleColor {
+  background-color: #4caf50 !important;
+}
+.button-group .denyToggleColor {
+  background-color: red !important;
+}
+
+.button-group .acceptBtn:hover {
+  background-color: #2b772e !important;
+}
+.button-group .denyBtn:hover {
+  background-color: rgb(170, 0, 0) !important;
+}
+.button-group .editBtn:hover {
+  background-color: rgb(218, 141, 0);
+}
+.modify {
+  /* visibility: hidden; */
+  display: none !important;
+}
+button:disabled {
+  background-color: gray;
+  cursor: auto;
+}
+.choose {
+  background-color: gray !important;
+}
+.expired {
+  visibility: hidden;
+}
+.req-button span {
+  font-weight: 900;
+  font-size: 24px;
+}
+
+span {
+  content: "\2713";
+}
+span {
+  content: "\270E";
+}
+span {
+  content: "0xD83D";
+}
+
+@media only screen and (max-width: 1300px) {
+  .container {
+    margin-bottom: 2rem;
+  }
+  .main-container {
+    display: block;
+    overflow-x: auto !important;
+  }
+}

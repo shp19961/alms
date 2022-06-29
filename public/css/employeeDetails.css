@@ -1,0 +1,211 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif !important;
+  font-size: 22px;
+}
+/* .container span{
+  font-size: 22px;
+  font-weight: normal;
+}
+h1,h2,h3,h4,h5,.container .full-form p,.container .joining-date p{
+  font-weight: 700 !important;
+} */
+
+.container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+.container > h1 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 27px;
+  color: rgb(82, 82, 82);
+  transition: all 1s;
+}
+.container .full-form {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+.container .full-form p {
+  font-size: 22px;
+  text-transform: capitalize;
+  text-align: center;
+  padding: 0px 10px;
+  border-left: 2px solid rgb(126, 126, 126);
+}
+.container .full-form p:first-child {
+  border: none;
+}
+
+.form-container h1 {
+  font-size: 25px;
+  text-align: center;
+  color: black;
+  border-bottom: 1px solid rgb(177, 177, 177);
+  margin-bottom: 1rem;
+  color: tomato;
+  text-transform: uppercase;
+}
+.form-container {
+  width: 400px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    border-radius: 8px;
+    padding: 10px 30px;
+    padding-top: 15px;
+    margin-bottom: 10px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+.input-group,
+.btn {
+  width: 365px;
+  font-size: 18px;
+  padding: 0.9rem 2rem;
+  margin: 1rem auto;
+  border-radius: 5px;
+  background: none;
+  outline: none;
+  border: 1px solid rgb(189, 189, 189);
+  text-align: center;
+}
+.input-group {
+  color: black;
+}
+.input-group ::placeholder {
+  color: rgb(119, 119, 119);
+  text-align: center;
+}
+[type="date"]:invalid::-webkit-datetime-edit {
+  color: rgb(119, 119, 119);
+  text-align: center;
+  text-transform: uppercase;
+}
+.btn {
+  width: 100%;
+  padding: 10px 20px !important;
+  transition: 1s all;
+  cursor: pointer;
+  background-color: tomato !important;
+  color: white !important;
+  font-size: 24px !important;
+}
+.btn:hover {
+  background-color: rgb(204, 46, 18) !important;
+}
+#error {
+  color: tomato;
+  font-size: 20px;
+  text-align: center;
+}
+.container .userTitle-outer{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+.container .userTitle,.container .joining-date,.left-main-container .full-form{
+  width: 98%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.container .userTitle > p,.container .joining-date p{
+  font-size: 20px;
+  padding: 10px;
+  background-color: #131328;
+  width: max-content;
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 10px;
+  margin: 0.5rem 0.3rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+.container .userTitle p > span{
+  font-size: 20px;
+}
+.green{
+  background-color: green !important;
+}
+.red{
+  background-color: red !important;
+}
+
+.attendance-container h3,
+.leaves-container h3 {
+  text-align: center;
+  font-size: 25px;
+  text-transform: uppercase;
+  margin: 1rem 0rem;
+  color: blue;
+  border-bottom: 1px solid rgb(124, 124, 124);
+  padding-bottom: 15px;
+}
+.container .attendance-container,
+.container .leaves-container {
+  padding: 0px 15px;
+}
+.attendance-container table,
+.leaves-container table {
+  width: 100%;
+  text-align: center;
+  margin: 0px auto;
+  border-collapse: collapse;
+}
+.leaves-container table{
+  margin-bottom: 1rem;
+}
+.attendance-container table tr th,
+.leaves-container table tr th {
+  font-size: 20px;
+  padding: 10px;
+  border: 1px solid rgb(172, 172, 172);
+  border: 1px solid greenyellow;
+}
+.attendance-container table tr td,
+.leaves-container table tr td {
+  font-size: 20px;
+  padding: 5px;
+  text-align: center !important;
+  border: 1px solid rgb(172, 172, 172);
+  border: 1px solid greenyellow;
+}
+
+tr:nth-child(even) {
+  background-color: rgba(214, 238, 238,0.3) !important;
+}
+
+.leaves-container table tr .reason {
+  width: 22rem;
+  border: 1px solid greenyellow;
+}
+
+@media only screen and (max-width: 1200px) {
+  .container {
+    display: block;
+  }
+  .container .attendance-container,
+  .container .leaves-container {
+    overflow-x: auto;
+  }
+  .form-container {
+    margin: 0px auto;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .form-container {
+    width: 100%;
+  }
+}

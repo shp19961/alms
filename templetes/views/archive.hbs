@@ -1,0 +1,76 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+     <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/archive.css" />
+    <link rel="stylesheet" href="./css/headers.css">
+    <title>archive employee</title>
+  </head>
+  <body>
+    <div class="container">
+      {{>adminNavbar}}
+      <div class="main-container">
+        <div class="active-employee-div">
+          <h2 class="heading">Active Employees</h2>
+          <table>
+            <head>
+              <tr>
+                <th>Sr. No.</th>
+                <th>Email Id</th>
+                <th>Name</th>
+                <th>Change Status</th>
+              </tr>
+            </head>
+            <tbody class="active-tbody">
+            </tbody>
+          </table>
+          {{>paginationCard}}
+        <div class="leavingDate-pop ">
+    </div>
+        </div>
+        <div class="inactive-employee-div">
+          <h2 class="heading">Archive Employees</h2>
+          <table>
+            <head>
+              <tr>
+                <th>Sr. No.</th>
+                <th>Email Id</th>
+                <th>Name</th>
+                <th>Joining Date</th>
+                <th>Leaving Date</th>
+                <th>Archive By</th>
+                <th>Archive Date</th>
+                <th>Change Status</th>
+              </tr>
+            </head>
+            <tbody class="inactive-tbody">
+            </tbody>
+          </table>
+          {{>paginationCard}}
+        </div>
+      </div>
+      <div class="backDrop visual"></div>
+    </div>
+    {{>footer}}
+    <script src="./js/archive.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,106 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0/dist/chartjs-plugin-datalabels.min.js"></script>
+  <link rel="stylesheet" href="css/headers.css" />
+  <link rel="stylesheet" href="css/employeeDashboard.css" />
+  <title>Employee Dashboard</title>
+</head>
+
+<body>
+  <div class="container">
+    {{>employeeNavbar}}
+    <div class="main-container">
+      <div class="profile-details">
+        <div class="user-basic-details">
+          <div class="user-basic-sort-line"></div>
+          <div class="user-basic-detail-box">
+            <i class="fa-solid fa-user"></i>
+            <h2 id="name">Sachin Yadav</h2>
+          </div>
+        </div>
+        <div class="user-basic-details">
+          <div class="user-basic-sort-line"></div>
+          <div class="user-basic-detail-box">
+            <i class="fa-solid fa-envelope"></i>
+            <h2 id="email">sachiny@uvxcel.com</h2>
+          </div>
+        </div>
+        <div class="user-basic-details">
+          <div class="user-basic-sort-line"></div>
+          <div class="user-basic-detail-box">
+            <i class="fa-solid fa-timeline"></i>
+            <h2 id="shift">FirstShift</h2>
+          </div>
+        </div>
+        <div class="user-basic-details">
+          <div class="user-basic-sort-line"></div>
+          <div class="user-basic-detail-box">
+            <i class="fa-solid fa-location-dot"></i>
+            <h2 id="designation">Software Engineer</h2>
+          </div>
+        </div>
+      </div>
+      <section id="attendance details">
+        <div class="main-attendance-div">
+          <div class="attendace-chart-heading-div">
+            <h3 style="text-align: center;">All Month Details</h3>
+            <div class="attendance-chart-main-div">
+              <div id="employeeAttendaceHeader" class="attendace-chart-div">
+                <canvas id="employeeAttendance"></canvas>
+              </div>
+            </div>
+          </div>
+            <div class="attendace-chart-heading-div">
+              <h3 style="text-align: center;">Leave Details</h3>
+          <div class="leave-data-div">
+              <div class="left-leave-data">
+                <div class="leave-data-types activeLeaveChart">Sick Leave</div>
+                <div class="leave-data-types">Casual Leave</div>
+                <div class="leave-data-types">Privilege Leave</div>
+              </div>
+              <div class="right-leave-data">
+
+                <div id="sickLeavesMainDiv" class="attendance-chart-main-div leaves-div">
+                  <div id="employeeLeavesHeader" class="attendace-chart-div">
+                    <canvas id="employeeSickLeaves"></canvas>
+                  </div>
+
+                </div>
+                <div id="casualLeavesMainDiv" class="attendance-chart-main-div hide leaves-div">
+                  <div id="employeeLeavesHeader" class="attendace-chart-div">
+                    <canvas id="employeeCasualLeaves"></canvas>
+                  </div>
+
+                </div>
+                <div id="privilegeLeavesMainDiv" class="attendance-chart-main-div hide leaves-div">
+                  <div id="employeeLeavesHeader" class="attendace-chart-div">
+                    <canvas id="employeePrivilegeLeaves"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </div>
+  </div>
+  {{>footer}}
+  <script src="/js/employeeDashboard.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

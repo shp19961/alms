@@ -1,0 +1,166 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primary-color: rgb(23, 22, 22);
+}
+body{
+    background-color: aliceblue;
+}
+
+.profile-details{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.profile-details .user-basic-details{
+    width: 310px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 10px;
+    
+}
+.user-basic-sort-line{
+    width: 100%;
+    background-color: red;
+    height: 10px;
+}
+.user-basic-details:nth-child(1) i,.user-basic-details:nth-child(1) .user-basic-sort-line{
+    background-color: indigo;
+}
+.user-basic-details:nth-child(2) i,.user-basic-details:nth-child(2) .user-basic-sort-line{
+    background-color:brown;
+}
+.user-basic-details:nth-child(3) i,.user-basic-details:nth-child(3) .user-basic-sort-line{
+    background-color: darkolivegreen;
+}
+.user-basic-details:nth-child(4) i,.user-basic-details:nth-child(4) .user-basic-sort-line{
+    background-color:teal;
+}
+.user-basic-details:nth-child(5) i,.user-basic-details:nth-child(5) .user-basic-sort-line{
+    background-color: chocolate;
+}
+
+.user-basic-detail-box{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+    
+}
+.user-basic-detail-box i{
+    font-size: 30px;
+    background-color: red;
+    padding: 5px;
+    color: white;
+    border-radius: 5px;
+}
+.profile-details .user-basic-details h2{
+    width: 100%;
+    font-size: 23px;
+    margin: 0;
+    text-align: center;
+    color: var(--primary-color);
+    padding: 0px 3px;
+    text-transform: capitalize;
+}
+.profile-details .user-basic-details:nth-child(2) h2{
+    text-transform: none;
+}
+
+
+
+/* attendance chart css start */
+.main-attendance-div{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 20px 0px;
+}
+.attendace-chart-heading-div{
+    /* width: 50%; */
+    max-width: 50%;
+    padding: 20px;
+}
+.attendace-chart-heading-div h3{
+    text-align: center;
+    color: rgb(42, 42, 103);
+}
+.leaves-div{
+    background-color: rgb(255 193 116 / 28%);
+    border: 1px solid rgb(255 193 116 / 28%) !important;
+    
+}
+.attendance-chart-main-div{
+    width: 100%;
+    overflow-x: auto;
+    border: 2px solid rgb(255 193 116 / 28%);;
+}
+.attendace-chart-div{
+    height: 300px;
+    width: 300px;
+    padding:10px;
+}
+.leave-data-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+}
+.left-leave-data{
+    height: 100%;
+}
+.leave-data-types{
+    height: calc(100% / 3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(255 193 116 / 28%);;
+    cursor: pointer;
+    padding:0px 5px;
+}
+.hide{
+    display: none !important;
+}
+.activeLeaveChart{
+    background-color: rgb(255 193 116 / 28%);;
+}
+
+
+
+
+
+
+/* attendance chart css end */
+
+
+@media screen and (max-width: 800px) {
+    .main-attendance-div {
+        flex-direction: column;
+    }
+    .attendace-chart-heading-div{
+        width: 98%;
+    }
+  }
+@media screen and (max-width: 600px) {
+    .attendace-chart-div {
+        width: 250px;
+        height: 250px;
+        padding: 10px 0px;
+    }
+    .leave-data-div {
+        height: 250px;
+    }
+  }

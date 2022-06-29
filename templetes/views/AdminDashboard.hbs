@@ -1,0 +1,103 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="/css/headers.css" />
+  <link rel="stylesheet" href="/css/AdminDashboard.css" />
+  <title>Admin Dashboard</title>
+</head>
+
+<body>
+  <div class="container">
+    {{>adminNavbar}}
+    <div class="allEmployeeByFilterDiv">
+      <div class="search-div">
+        <input id="search-query-input" type="text" placeholder="search name, email, designation ,gender"
+          class="search-user-input">
+        <button class="searchBtn">Search</button>
+      </div>
+      <div class="filterUserDataDiv">
+        <div class="table-responsive-lg table-reference hide">
+          <table class="table table-hover table-dark">
+            <thead>
+              <tr>
+                <th scope="col">Sr. No.</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Designation</th>
+                <th scope="col">See more..</th>
+              </tr>
+            </thead>
+            <tbody class="filter-user">
+            </tbody>
+          </table>
+        </div>
+        <div class="error-container hide"></div>
+        {{>paginationCard}}
+      </div>
+    </div>
+    <h1 id="totalEmployee"></h1>
+    <div class="main-container">
+      <div class="firstRowData">
+        <div class="firstRow">
+          <div class="firstRowCanvasDiv" id="firstRowLeft">
+            <canvas id="attendanceChart" class="myChart" width="450" height="400"></canvas>
+          </div>
+          <h2 class="chart-heading">Weekly employee presence</h2>
+        </div>
+        <div class="firstRow ">
+          <div class="firstRowCanvasDiv" id="firstRowRight">
+
+            <canvas id="genderChart" class="myChart" width="350" height="350"></canvas>
+          </div>
+          <h2 class="chart-heading">Gender distribution</h2>
+        </div>
+      </div>
+
+      {{!-- leave data show column --}}
+      {{!-- <h1>All Leave Details</h1> --}}
+      <div class="secondRowData">
+        <div class="secondRow ">
+          <div id="secondRowLeft" class="secondRowCanvasDiv">
+            <canvas id="sickChart"></canvas>
+          </div>
+          <h2 class="chart-heading">Sick Leaves</h2>
+        </div>
+        <div class="secondRow ">
+          <div id="secondRowCenter" class="secondRowCanvasDiv">
+            <canvas id="casualChart"></canvas>
+          </div>
+          <h2 class="chart-heading">Casual Leaves</h2>
+        </div>
+        <div class="secondRow ">
+          <div id="secondRowRight" class="secondRowCanvasDiv">
+            <canvas id="privilegeChart"></canvas>
+
+          </div>
+          <h2 class="chart-heading">Privilege Leaves</h2>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+  </div>
+  {{>footer}}
+  <script src="/js/AdminDashboard.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

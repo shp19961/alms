@@ -3,46 +3,82 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/headers.css" />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
-      integrity="sha512-L7MWcK7FNPcwNqnLdZq86lTHYLdQqZaz5YcAgE+5cnGmlw8JT03QB2+oxL100UeB6RlzZLUxCGSS4/++mNZdxw=="
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
     />
     <title>Attendance System</title>
   </head>
   <body>
     <div class="container">
-      <h1>Attendance System</h1>
-      <div class="user-div">
-        <ul class="user-ul">
-          <li><a href="/new">new user</a></li>
-          <li><a href="newUser.html">delete user</a></li>
-          <li><a href="AllUserData.html">All user</a></li>
-          <li><a href="#">one user</a></li>
-          <li><a href="/leaves">update leaves</a></li>
-        </ul>
-      </div>
+      {{>adminNavbar}}
       <div class="arrow-div">
-        {{! <i class="fas fa-chevron-left left-arrow"></i> }}
         <div class="middle-text">
-          <h1 class="month year">2022</h1>
-          <h2 class="month">jan</h2>
-          <p class="month">22</p>
+          <p class="month year">2022</p>
+          <p class="month m">jan</p>
         </div>
-        {{! <i class="fas fa-chevron-right right-arrow"></i> }}
       </div>
-      <div class="current">
-        <p>27-january-2022</p>
+      <div class="color-box-container">
+        <div class="color-text">
+          <div class="color-box yellow"></div><p>Weekend</p>
+        </div>
+        <div class="color-text">
+          <div class="color-box red"></div><p>Holiday</p>
+        </div>
+        <div class="color-text">
+          <div class="color-box purple"></div><p>SL = Sick Leave</p>
+        </div>
+        <div class="color-text">
+          <div class="color-box darkchocolate"></div><p>CL = Casual Leave</p>
+        </div>
+        <div class="color-text">
+          <div class="color-box darkMarun"></div><p>PL = Privilege Leave</p>
+        </div>
+        <div class="color-text">
+          <div class="color-box compOff"></div><p>Comp-Off</p>
+        </div>
+        <div class="color-text">
+          <div class="color-box halfSick"></div><p>Half Sick Leave</p>
+        </div>
+        <div class="color-text">
+          <div class="color-box halfCasual"></div><p>Half Casual Leave</p>
+        </div>
+        <div class="color-text">
+          <div class="color-box halfPrivilege"></div><p>Half Privilege Leave</p>
+        </div>
       </div>
+      <div class="color-box-container attendance-note">
+        
+      </div>
+      {{!-- forget attendance button start --}}
+      <div class="forget-button-container">
+        <select name="forget-attendance-select" id="forget-attendance" class="btn">
+          <option hidden >Forget Attendace</option>
+          <option value="Sequential">Sequential date select</option>
+          <option value="Multiple">Multiple date select</option>
+        </select>
+      </div>
+      {{!-- forget attendance button end --}}
+      
       <div class="main-container">
         <table>
           <head>
             <tr>
-              <th>User Id</th>
-              <th>First Name</th>
+              <th>Sr.No.</th>
+              <th>Employee Id</th>
+              <th>FirstName</th>
               <th>LastName</th>
             </tr>
           </head>
@@ -54,27 +90,72 @@
           </head>
           <tbody class="checkBox-div"></tbody>
         </table>
-        <table>
+        <table class="present-table">
           <head>
             <tr>
-              <th>Present</th>
+              <th class="present-div">Present</th>
             </tr>
           </head>
           <tbody class="missed-div"></tbody>
         </table>
         <table>
           <head>
-            <tr>
+            <tr class="missed-tr">
               <th>Absent</th>
-              <th>sick leave</th>
-              <th>planned leave</th>
+              <th>sick_Leave</th>
+              <th>planned_Leave</th>
             </tr>
           </head>
           <tbody class="absent-div">
           </tbody>
         </table>
-      </div>
+        </div>
+        {{>paginationCard}}
     </div>
+          <div class="main-popup hide">
+            <div class="pop-cross-button">
+            <p><i class="fa-solid fa-xmark" id="popup-cross-mark"></i></p>
+          </div>
+            <div class="input-date-selecter">
+              <input type="text" id="forgetDatePicker" placeholder="Select Dates">
+              <button class="update-attendace-done-button btn">Next</button>
+            </div>
+        <div class="pop-div hide">
+          <h3>Selected Dates</h3>
+          <div class="sameCheckBox hide">
+            <span class="text-span">Same as</span><span class="input-span"><input type="checkbox" class="sameCheckBoxInput" disabled></span>
+          </div>
+          <div class="dates-container">
+            <div class="dateDiv">
+              <p><span>2022-05-22</span><span>TO</span><span>2022-05-22</span></p>
+              <input type="text" placeholder="reason ?">
+            </div>
+            <div class="dateDiv">
+              <p>2022-05-22</p>
+              <input type="text" placeholder="Forget reason ?">
+            </div>
+            <div class="dateDiv">
+              <p>2022-05-22</p>
+              <input type="text" placeholder="Forget reason ?">
+            </div>
+          </div>
+          <div class="reqsBtnDiv">
+            <button class=" btn forget-edit">edit</button>
+            <button class=" btn forget-cancel">cancel</button>
+            <button class="btn forget-send">send request</button>
+          </div>
+            <div class="message">
+            <p></p>
+            </div>
+      </div>
+          </div>
+    {{>footer}}
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="./js/index.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

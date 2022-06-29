@@ -2,7 +2,7 @@ const mongose = require("mongoose");
 
 const dbconnection = () => {
   mongose
-    .connect("mongodb://localhost:27017/UvxcelAttendance", {
+    .connect(process.env.MONGO, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     })
